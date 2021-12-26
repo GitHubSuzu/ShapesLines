@@ -35,7 +35,7 @@ public class Paint : MonoBehaviour
     }
 
     /// <summary>
-    /// 全てのTrailRendererの全頂点を取得　Buttonに登録
+    /// 全てのTrailRendererの全頂点を取得 Buttonに登録
     /// </summary>
     public void GetVert()
     {             
