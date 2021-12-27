@@ -54,6 +54,17 @@ public class Paint : MonoBehaviour
                 Debug.Log(posArray[i]);
                 Instantiate(_vertCube, posArray[i], Quaternion.identity);
             }
+            Triangles(posArray[0],posArray[1],posArray[2]);
         }
+        
     }
+
+    public void Triangles(Vector3 a, Vector3 b, Vector3 c)
+    {
+        Vector3 g = default;
+        g.x = (a.x + b.x + c.x)/3;
+        g.y = (a.y + b.y + c.y)/3;
+        Instantiate(_vertCube, g, Quaternion.identity);
+    }
+    
 }
