@@ -7,13 +7,14 @@ using UnityEngine;
 /// </summary>
 public class Paint : MonoBehaviour
 {
-    [SerializeField] private Transform _paintObjParent;
+    [SerializeField] private readonly Transform _paintObjParent;
 
-    [SerializeField] private GameObject _paintObjPrefab;
+    [SerializeField] private readonly GameObject _paintObjPrefab;
 
-    [SerializeField] private GameObject _vertCube;
+    [SerializeField] private readonly GameObject _vertCube;
 
     private GameObject _tmpPaintObj;
+    bool check = true;
 
     private void Update()
     {
@@ -54,17 +55,27 @@ public class Paint : MonoBehaviour
                 Debug.Log(posArray[i]);
                 Instantiate(_vertCube, posArray[i], Quaternion.identity);
             }
-            Triangles(posArray[0],posArray[1],posArray[2]);
+
+            if (check)
+            {
+                Triangles(posArray[0], posArray[1], posArray[2]);
+                check = false;
+            }
+            
         }
         
     }
 
     public void Triangles(Vector3 a, Vector3 b, Vector3 c)
     {
-        Vector3 g = default;
-        g.x = (a.x + b.x + c.x)/3;
-        g.y = (a.y + b.y + c.y)/3;
-        Instantiate(_vertCube, g, Quaternion.identity);
+        float angleA = Vector3.Angle(b - a, c - a);
+        float angleB = Vector3.Angle(a - b, c - b);
+        float angleC = Vector3.Angle(a - c, b - c);
+
+        Debug.Log(angleA);
+        Debug.Log(angleB);
+        Debug.Log(angleC);
+        Debug.Log(angleA + angleB + angleC);
     }
     
 }
