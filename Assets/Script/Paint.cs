@@ -61,22 +61,69 @@ public class Paint : MonoBehaviour
                 Triangles(posArray[0], posArray[1], posArray[2]);
                 check = false;
             }
-            
         }
-        
     }
 
-    public void Triangles(Vector3 a, Vector3 b, Vector3 c)
+    //三角形
+    void Triangles(Vector3 a, Vector3 b, Vector3 c)
     {
-        float angleA = Vector3.Angle(b - a, c - a);
-        float angleB = Vector3.Angle(a - b, c - b);
-        float angleC = Vector3.Angle(b - c, a - c);
+        var angleA = Vector3.Angle(b - a, c - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, a - c);
 
         Debug.Log(angleA);
         Debug.Log(angleB);
         Debug.Log(angleC);
 
         Debug.Log(angleA + angleB + angleC);
+    }
+
+    //四角形
+    void Squares(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+    {
+        var angleA = Vector3.Angle(b - a, d - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, d - c);
+        var angleD = Vector3.Angle(c - d, a - d);
+    }
+
+    //五角形
+    void Pentagon(Vector3 a, Vector3 b, Vector3 c, Vector3 d, Vector3 e)
+    {
+        var angleA = Vector3.Angle(b - a, e - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, d - c);
+        var angleD = Vector3.Angle(c - d, e - d);
+        var angleE = Vector3.Angle(d - e, a - e);
+    }
+
+    //六角形
+    void Hexagon(Vector3 a, Vector3 b, Vector3 c, Vector3 d, Vector3 e, Vector3 f)
+    {
+        var angleA = Vector3.Angle(b - a, f - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, d - c);
+        var angleD = Vector3.Angle(c - d, e - d);
+        var angleE = Vector3.Angle(d - e, f - e);
+        var angleF = Vector3.Angle(e - f, a - f);
+    }
+
+    //ひし形
+    void rhombus(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+    {
+        var angleA = Vector3.Angle(b - a, d - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, d - c);
+        var angleD = Vector3.Angle(c - d, a - d);
+    }
+
+    //台形
+    void Trapezoid(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+    {
+        var angleA = Vector3.Angle(b - a, d - a);
+        var angleB = Vector3.Angle(a - b, c - b);
+        var angleC = Vector3.Angle(b - c, d - c);
+        var angleD = Vector3.Angle(c - d, a - d);
     }
     
 }
