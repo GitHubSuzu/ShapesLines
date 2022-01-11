@@ -70,11 +70,12 @@ public class Paint : MonoBehaviour
     {
         float angleA = Vector3.Angle(b - a, c - a);
         float angleB = Vector3.Angle(a - b, c - b);
-        float angleC = Vector3.Angle(a - c, b - c);
+        float angleC = Vector3.Angle(b - c, a - c);
 
         Debug.Log(angleA);
         Debug.Log(angleB);
         Debug.Log(angleC);
+
         Debug.Log(angleA + angleB + angleC);
     }
     
