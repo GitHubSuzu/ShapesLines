@@ -7,11 +7,11 @@ using UnityEngine;
 /// </summary>
 public class Paint : MonoBehaviour
 {
-    [SerializeField] private readonly Transform _paintObjParent;
+    [SerializeField] private Transform _paintObjParent;
 
-    [SerializeField] private readonly GameObject _paintObjPrefab;
+    [SerializeField] private GameObject _paintObjPrefab;
 
-    [SerializeField] private readonly GameObject _vertCube;
+    [SerializeField] private GameObject _vertCube;
 
     private GameObject _tmpPaintObj;
     bool check = true;
